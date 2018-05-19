@@ -1,0 +1,47 @@
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+
+  dependencies {
+    classpath 'org.springframework.boot:spring-boot-gradle-plugin:2.0.1.RELEASE'
+  }
+}
+
+plugins {
+  id 'java'
+  id 'net.minecrell.licenser' version '0.3'
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+group 'com.destroystokyo'
+version '1.0.0-SNAPSHOT'
+
+sourceCompatibility = 9
+targetCompatibility = 9
+
+license {
+  header project.file('../header.txt')
+  include '**/*.java'
+  newLine false
+}
+
+repositories {
+  mavenLocal()
+  mavenCentral()
+  maven {
+    url 'https://oss.sonatype.org/content/groups/public/'
+  }
+}
+
+dependencies {
+  compile 'it.unimi.dsi:fastutil:8.1.1'
+  compile 'net.kyori:xml:1.0.0-SNAPSHOT'
+  compile 'org.springframework.boot:spring-boot-starter-undertow'
+  compile('org.springframework.boot:spring-boot-starter-web') {
+    exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
+  }
+}

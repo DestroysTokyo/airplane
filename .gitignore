@@ -1,0 +1,10 @@
+/.idea/
+/backend/.gradle/
+/backend/build/
+/backend/out/
+/frontend/dist/
+/frontend/node_modules/
+/run/
+/backend/*.iml
+/frontend/yarn-error.log
+/*.iml

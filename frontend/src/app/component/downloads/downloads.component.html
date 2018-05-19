@@ -1,0 +1,32 @@
+<section class='section'>
+  <div class='container'>
+    <div class='columns'>
+      <div class='column'>
+        <div class='content'>
+          <h1>Downloads</h1>
+          <div *ngIf='loading'>
+            <a class="button is-info is-loading">Loading</a>
+          </div>
+          <div class='downloads'>
+            <ol class='builds'>
+              <li *ngFor='let build of builds; let i = index' class='build' id='b{{ build.id }}'>
+                <div class='left'><span class='id'>#{{ build.id }}</span> <span class='tag is-info' *ngIf='i == 0'>Latest</span></div>
+                <div class='right'>
+                  <div class='artifacts buttons'>
+                    <a *ngFor="let artifact of build.artifacts" class='button is-link' href='/api/v1/download/{{ build.id }}/{{ artifact }}/'>
+                    <span class='icon'>
+                    <i class='fa fa-download'></i>
+                    </span>
+                    <span>{{ artifact }}</span>
+                    </a>
+                    <span class='button time' title="{{ build.timestamp | date:'yyyy-MM-dd HH:mm:ss Z' }}">{{ build.timestamp | timeAgo }}</span>
+                  </div>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

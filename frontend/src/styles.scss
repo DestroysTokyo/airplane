@@ -1,0 +1,53 @@
+.downloads {
+  .builds {
+    list-style: none;
+    padding-left: 20px;
+
+    .build {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-radius: 2px;
+
+      &:nth-child(even) {
+        background: #fafafa;
+      }
+
+      .left {
+        align-items: center;
+        display: flex;
+
+        .id {
+          font-size: 1.25em;
+          font-weight: 500;
+          margin-right: 0.5rem;
+        }
+      }
+
+      .right {
+        align-items: center;
+        display: flex;
+
+        .artifacts {
+          white-space: nowrap;
+          overflow: hidden;
+
+          .buttons {
+            margin: 0;
+
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+
+          .time {
+            background: none;
+            border: 0;
+            cursor: default;
+            font-size: 0.75em;
+          }
+        }
+      }
+    }
+  }
+}
