@@ -33,9 +33,9 @@ public class Artifact {
 
   Artifact(final Build build, final Node node) {
     this.build = build;
-    this.displayPath = node.nodes("displayPath").one().need().value();
-    this.fileName = node.nodes("fileName").one().need().value();
-    this.relativePath = node.nodes("relativePath").one().need().value();
+    this.displayPath = node.nodes("displayPath").one().required().value();
+    this.fileName = node.nodes("fileName").one().required().value();
+    this.relativePath = node.nodes("relativePath").one().required().value();
   }
 
   public String displayPath() {

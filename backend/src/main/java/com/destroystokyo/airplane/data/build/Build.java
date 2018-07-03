@@ -37,9 +37,9 @@ public class Build {
   private final List<Artifact> artifacts;
 
   Build(final Node node) {
-    this.id = Integer.parseInt(node.nodes("id").one().need().value());
-    this.url = node.nodes("url").one().need().value();
-    this.timestamp = Long.parseLong(node.nodes("timestamp").one().need().value());
+    this.id = Integer.parseInt(node.nodes("id").one().required().value());
+    this.url = node.nodes("url").one().required().value();
+    this.timestamp = Long.parseLong(node.nodes("timestamp").one().required().value());
     this.artifacts = node
       .elements("artifact")
       .map(Exceptions.rethrowFunction(artifact -> new Artifact(this, artifact)))
