@@ -39,7 +39,7 @@ repositories {
 
 dependencies {
   compile 'it.unimi.dsi:fastutil:8.1.1'
-  compile 'net.kyori:xml:1.0.0-SNAPSHOT'
+  compile 'net.kyori:xml:1.0.0'
   compile 'org.springframework.boot:spring-boot-starter-undertow'
   compile('org.springframework.boot:spring-boot-starter-web') {
     exclude group: 'org.springframework.boot', module: 'spring-boot-starter-tomcat'
